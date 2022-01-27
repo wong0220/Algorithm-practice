@@ -10,24 +10,22 @@ let number = input.splice(0, 1)[0];
 
 function solution(number, input) {
   for (let i = 0; i < number; i++) {
-    // let arr = [2, 3, 5]
-    let arr = [2];
+    let num = input[i];
+    let tempArr = [];
 
-    // if (input[i] > 5) {
-    //   for (let j = 6; j < input[i]; j++) {
-    //     if (j % 2 !== 0 && j % 3 !== 0 && j % 5 !== 0) {
-    //       arr.push(j);
-    //     }
-    //   }
-    // }
-
-    for(let j = 2; j<input[i]; j++){
-
-        for(let temp =2; temp<j; temp++){
-
-            if(j%temp === 0)
-        }
+    for (let j = 1; j <= num; j++) {
+      tempArr.push(j);
     }
+
+    for (let j = 1; j * j < num; j++) {
+      if (tempArr[j]) {
+        for (let x = tempArr[j] * tempArr[j]; x <= num; x += tempArr[j]) {
+          tempArr[x - 1] = 0;
+        }
+      }
+    }
+
+    let arr = tempArr.filter((el) => el !== 0 && el !== 1);
 
     if (arr.some((el) => el === input[i] / 2)) {
       console.log(`${input[i] / 2} ${input[i] / 2}`);
