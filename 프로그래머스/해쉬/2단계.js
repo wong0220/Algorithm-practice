@@ -11,6 +11,5 @@ function solution(clothes) {
   }
 
   Object.values(clothesObj).forEach((el) => (answer *= el.length + 1));
-  answer -= 1;
-  return answer;
+  return (answer -= 1);
 }
