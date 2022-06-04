@@ -27,6 +27,7 @@
 
 // return answer;
 
+// 효율성 고려한 문제풀이
 function solution(info, query) {
   let map = {};
   let answer = [];
